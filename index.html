@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f3ff">
+  <meta name="description" content="A simple, lovely space to organize your day.">
+  <title>Daylight — Your daily tasks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Daylight home">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        <span>Sofiat</span>
+      </a>
+      <div class="today-label" id="today-label"></div>
+    </header>
+
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">YOUR PERSONAL SPACE</p>
+        <h1 id="page-title">Make room for<br><span>what matters.</span></h1>
+        <p class="hero-note">One thing at a time. You’ve got this.</p>
+      </div>
+      <div class="sun-art" aria-hidden="true">
+        <span class="sun-orbit orbit-one"></span>
+        <span class="sun-orbit orbit-two"></span>
+        <span class="sun-core"></span>
+        <span class="sun-spark spark-one">✦</span>
+        <span class="sun-spark spark-two">·</span>
+      </div>
+    </section>
+
+    <section class="task-card" aria-label="Your task list">
+      <div class="card-heading">
+        <div>
+          <h2>Today’s focus</h2>
+          <p id="task-count">You have 0 things on your list</p>
+        </div>
+        <div class="progress-ring" id="progress-ring" role="img" aria-label="0% of tasks complete">
+          <span id="progress-value">0%</span>
+        </div>
+      </div>
+
+      <form class="task-form" id="task-form">
+        <label class="visually-hidden" for="task-input">Add a task</label>
+        <input id="task-input" name="task" type="text" placeholder="What would you like to get done?" maxlength="120" autocomplete="off" required>
+        <button class="add-button" type="submit"><span aria-hidden="true">＋</span><span>Add task</span></button>
+      </form>
+
+      <div class="list-toolbar">
+        <div class="filters" role="group" aria-label="Filter tasks">
+          <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All <span class="filter-count" id="all-count">0</span></button>
+          <button class="filter-button" type="button" data-filter="active" aria-pressed="false">To do</button>
+          <button class="filter-button" type="button" data-filter="completed" aria-pressed="false">Done</button>
+        </div>
+        <button class="clear-button" id="clear-completed" type="button" hidden>Clear completed</button>
+      </div>
+
+      <ul class="task-list" id="task-list" aria-live="polite"></ul>
+      <div class="empty-state" id="empty-state">
+        <span class="empty-icon" aria-hidden="true">☼</span>
+        <p class="empty-title">A little breathing room.</p>
+        <p class="empty-copy">Add a task above and make today yours.</p>
+      </div>
+      <footer class="card-footer"><span class="footer-dot"></span><span>Small steps still move you forward.</span></footer>
+    </section>
+
+    <p class="page-footer">Made for the days that matter <span aria-hidden="true">♡</span></p>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
